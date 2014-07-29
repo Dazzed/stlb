@@ -45,5 +45,4 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
-  gem 'simple_bdd'
 end
