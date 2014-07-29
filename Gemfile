@@ -15,6 +15,10 @@ gem 'foundation-rails'
 gem 'haml-rails'
 gem 'pg'
 gem 'puma'
+gem 'sidekiq'
+group :production do
+  gem 'rails_12factor'
+end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -36,8 +40,9 @@ group :development, :test do
 end
 group :test do
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'simple_bdd'
 end
