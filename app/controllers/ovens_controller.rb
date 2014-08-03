@@ -4,4 +4,8 @@ class OvensController < ApplicationController
   def index
     @ovens = current_user.ovens
   end
+
+  def show
+    @oven = current_user.ovens.find_by!(id: params[:id])
+  end
 end

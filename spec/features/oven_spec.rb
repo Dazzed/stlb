@@ -14,8 +14,8 @@ feature 'Oven' do
     oven = user.ovens.first
 
     visit root_path
-
     click_link oven.name
+
     expect(current_path).to eq(oven_path(oven))
     expect(page).to have_content oven.name
   end

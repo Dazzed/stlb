@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 
   before_create :setup_first_oven
 
-
   private
 
   def setup_first_oven

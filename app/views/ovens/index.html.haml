@@ -2,4 +2,4 @@
 
 %ul.ovens
   - @ovens.each do |oven|
-    %li= oven.name
+    %li= link_to oven.name, oven
