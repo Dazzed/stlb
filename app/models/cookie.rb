@@ -1,5 +1,9 @@
 class Cookie < ActiveRecord::Base
-  belongs_to :oven
+  belongs_to :storage, polymorphic: :true
   
-  validates :oven, presence: true
+  validates :storage, presence: true
+
+  def ready?
+    true
+  end
 end

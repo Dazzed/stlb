@@ -5,6 +5,7 @@ describe User do
 
   describe "associations" do
     it { should have_many(:ovens) }
+    it { should have_many(:stored_cookies) }
   end
 
   describe "validations" do

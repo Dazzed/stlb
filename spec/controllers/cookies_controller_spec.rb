@@ -34,7 +34,7 @@ describe CookiesController do
 
           cookie = assigns(:cookie)
           expect(cookie).to_not be_persisted
-          expect(cookie.oven).to eq(oven)
+          expect(cookie.storage).to eq(oven)
         end
       end
 
@@ -79,7 +79,7 @@ describe CookiesController do
             post :create, oven_id: oven.id, cookie: cookie_params
           }.to change{Cookie.count}.by(1)
 
-          expect(Cookie.last.oven).to eq(oven)
+          expect(Cookie.last.storage).to eq(oven)
         end
 
         it "redirects to the oven" do

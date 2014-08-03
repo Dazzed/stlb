@@ -3,12 +3,12 @@ class CookiesController < ApplicationController
 
   def new
     @oven = current_user.ovens.find_by!(id: params[:oven_id])
-    @cookie = @oven.cookies.build
+    @cookie = @oven.build_cookie
   end
 
   def create
     @oven = current_user.ovens.find_by!(id: params[:oven_id])
-    @cookie = @oven.cookies.create!(cookie_params)
+    @cookie = @oven.create_cookie!(cookie_params)
     redirect_to oven_path(@oven)
   end
 
