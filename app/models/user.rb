@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :ovens
+  has_many :stored_cookies, class_name: 'Cookie', as: :storage
 
   before_create :setup_first_oven
 

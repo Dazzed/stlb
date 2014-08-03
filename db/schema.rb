@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729142147) do
+ActiveRecord::Schema.define(version: 20140803174729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cookies", force: true do |t|
+    t.string   "fillings"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "storage_id"
+    t.string   "storage_type"
+  end
 
   create_table "ovens", force: true do |t|
     t.integer  "user_id"
