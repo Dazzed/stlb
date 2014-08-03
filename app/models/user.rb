@@ -3,4 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :ovens
+
+  before_create :setup_first_oven
+
+  private
+
+  def setup_first_oven
+    ovens.new(name: 'My First Oven')
+  end
+
 end

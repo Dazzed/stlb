@@ -1,13 +1,23 @@
+require 'rails_helper'
+
 describe User do
+  subject { User.new(email: 'user@example.com') }
 
-  before(:each) { @user = User.new(email: 'user@example.com') }
-
-  subject { @user }
-
-  it { should respond_to(:email) }
-
-  it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+  describe "associations" do
+    it { should have_many(:ovens) }
   end
 
+  describe "validations" do
+
+  end
+
+  describe "on creation" do
+    it "assigns a new oven" do
+      user = FactoryGirl.build(:user)
+      expect(user.ovens.count).to eq(0)
+      user.save!
+      user.reload
+      expect(user.ovens.count).to eq(1)
+    end
+  end
 end
