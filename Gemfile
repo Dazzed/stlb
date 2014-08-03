@@ -45,4 +45,5 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
+  gem 'shoulda-matchers', require: false
 end
