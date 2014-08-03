@@ -1,1 +1,12 @@
 %h3= @oven.name
+
+Cookies in oven:
+%ul
+  - if @oven.cookies.each do |cookie|
+    %li 1 cookie with #{cookie.fillings || "no fillings"}
+
+  - end.empty?
+    None
+
+
+= link_to "Prepare Cookie", new_oven_cookie_path(@oven), class: 'button'

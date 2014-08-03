@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  resources :ovens
+  resources :ovens do
+    resources :cookies
+  end
 end
