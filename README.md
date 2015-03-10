@@ -1,48 +1,32 @@
 Tanooki Bakery
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Tanooki Bakery is an artisanal digital bakery, crafting the finest digital cookies in New York City.
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+We don't mass produce our cookies in faceless factories. Instead, We bake cookies to order, one at a time.
 
-Problems? Issues?
------------
+Reference Application
+---------------------
+A reference application can be found at [http://tanooki-bakery.herokuapp.com](http://tanooki-bakery.herokuapp.com)
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+HTTP Auth access: bake / somecookies
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+Test Suite
+----------
+Like most bakeries, Tanooki Bakery has a test suite. The full suite can be run with:
 
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+``
+$ rspec spec
+``
 
-Ruby on Rails
+Requirements
 -------------
 
 This application requires:
 
 - Ruby 2.1.2
-- Rails 4.1.4
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
+- PostgreSQL server
 
 Similar Projects
 ----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+[Momofuku milk bar](http://milkbarstore.com/)
