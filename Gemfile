@@ -32,7 +32,7 @@ end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5.2'
 end
 
 group :test do
