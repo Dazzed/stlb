@@ -24,7 +24,7 @@ Requirements
 
 This application requires:
 
-- Ruby 2.3.3
+- Ruby 2.5.0
 - PostgreSQL server
 
 Similar Projects
