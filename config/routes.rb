@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       post :empty
     end
   end
+
+  mount MailPreview => 'mail_view' if Rails.env.development?
 end
