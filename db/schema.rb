@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103030409) do
+ActiveRecord::Schema.define(version: 20180116140702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20180103030409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["storage_type", "storage_id"], name: "index_cookies_on_storage_type_and_storage_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.text "customer_name", null: false
+    t.boolean "fulfilled", default: false, null: false
+    t.text "item", null: false
+    t.integer "quantity", null: false
+    t.datetime "pick_up_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ovens", force: :cascade do |t|

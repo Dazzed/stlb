@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+fillings = ['peanut butter', 'chocolate', 'marshmallow', 'icing']
+
+50.times do
+  Order.create(
+    customer_name: Faker::Name.name,
+    item: "Cookies with #{fillings.sample}",
+    quantity: Faker::Number.between(2, 24),
+    pick_up_at: Faker::Number.between(1, 10).days.from_now,
+  )
+end
