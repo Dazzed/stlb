@@ -26,6 +26,13 @@ Database Seed Data
 $ rake db:seed
 ```
 
+Dependency Installation
+------------------
+
+```
+$ bundle install
+$ yarn install
+```
 
 Requirements
 -------------
