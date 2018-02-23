@@ -19,6 +19,21 @@ Like most bakeries, Tanooki Bakery has a test suite. The full suite can be run w
 $ rspec spec
 ``
 
+Database Seed Data
+------------------
+
+```
+$ rake db:seed
+```
+
+Dependency Installation
+------------------
+
+```
+$ bundle install
+$ yarn install
+```
+
 Requirements
 -------------
 

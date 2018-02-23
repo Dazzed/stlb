@@ -14,5 +14,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders, only: [:index]
+
+  namespace :api do
+    resources :orders, only: [:index] do
+      put :fulfill, on: :member
+    end
+  end
+
   mount MailPreview => 'mail_view' if Rails.env.development?
 end
