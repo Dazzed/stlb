@@ -21,6 +21,7 @@ gem 'pg'
 gem 'devise'
 gem 'sidekiq'
 gem 'webpacker', '~> 3.0'
+gem 'mail_view'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
