@@ -17,7 +17,7 @@ export default class OrderTable extends React.Component {
 
   renderRow = (order) => {
     return (
-      <tr>
+      <tr key={`order_${order.id}`}>
         <td>{order.id}</td>
         <td>{this.formatDate(order.created_at)}</td>
         <td>{this.formatDate(order.pick_up_at)}</td>
