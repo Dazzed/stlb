@@ -4,5 +4,4 @@ class Cookie < ActiveRecord::Base
   validates :storage, presence: true
 
   validates :quantity, numericality: { greater_than: 0 }
-  
 end
