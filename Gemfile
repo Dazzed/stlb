@@ -22,6 +22,7 @@ gem 'devise'
 gem 'sidekiq'
 gem 'webpacker', '~> 3.0'
 gem 'mail_view'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
