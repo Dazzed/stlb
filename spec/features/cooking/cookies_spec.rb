@@ -8,8 +8,6 @@ feature 'Cooking cookies' do
     expect(page).to_not have_content 'Chocolate Chip'
     expect(page).to_not have_content 'Your Cookie is Ready'
 
-    # allow(CookieWorker).to receive(:perform_async).with(instance_of(Cookie)).and_return :result_from_service
-
     allow(CookieWorker).to receive(:perform_async) do |arg|
       cookie = Cookie.find(arg)
       cookie.ready = true
@@ -21,9 +19,7 @@ feature 'Cooking cookies' do
     fill_in 'Quantity', with: 10
     click_button 'Mix and bake'
 
-    sleep(12)
     expect(current_path).to eq(oven_path(oven))    
-    # expect(CookieWorker).to receive_message_chain(:new, :async, :perform)
     expect(page).to have_content 'Chocolate Chip'
     expect(page).to have_content 'Your 10 cookies are Ready'
 
@@ -72,7 +68,6 @@ feature 'Cooking cookies' do
       fill_in 'Fillings', with: 'Chocolate Chip'
       fill_in 'Quantity', with: 12
       click_button 'Mix and bake'
-      sleep(12)
       click_button 'Retrieve Cookie'
     end
 
