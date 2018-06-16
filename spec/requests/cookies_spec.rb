@@ -49,14 +49,25 @@ describe CookiesController do
   end
 
   describe 'POST create' do
+    before do
+      allow(CookieWorker).to receive(:perform_async) do |arg|
+        cookie = Cookie.find(arg)
+        cookie.ready = true
+        cookie.save!
+      end
+    end
+    
     let(:cookie_params) do
       {
-        fillings: 'Vanilla'
+        fillings: 'Vanilla',
+        quantity: 10
       }
     end
 
     context "when not authenticated" do
       before { sign_in nil }
+
+
 
       it "blocks access" do
         post "/ovens/#{oven.id}/cookies", params: { cookie: cookie_params }
