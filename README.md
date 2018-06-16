@@ -34,6 +34,13 @@ $ bundle install
 $ yarn install
 ```
 
+Cookie Worker Setup
+------------------
+
+```
+$ bundle exec sidekiq
+```
+
 Requirements
 -------------
 
@@ -41,6 +48,7 @@ This application requires:
 
 - Ruby 2.5.0
 - PostgreSQL server
+- Redis
 
 Similar Projects
 ----------------
