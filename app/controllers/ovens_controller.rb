@@ -16,4 +16,10 @@ class OvensController < ApplicationController
     end
     redirect_to @oven, alert: 'Oven emptied!'
   end
+
+  def get_cookie_status
+    cookie = Cookie.find(params[:id])
+    render json: {"status": cookie.ready}
+  end 
+
 end

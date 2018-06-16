@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'visitors#index'
+  get '/ovens/get_cookie_status/:id' => 'ovens#get_cookie_status', as: :get_cookie_status
 
   resources :ovens do
     resource :cookies
