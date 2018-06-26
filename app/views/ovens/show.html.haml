@@ -7,9 +7,29 @@
     - if @oven.cookie.ready?
       (Your #{pluralize(@oven.cookie.quantity, 'cookie')} #{@oven.cookie.quantity == 1 ? 'is' : 'are'} Ready)
       = button_to "Retrieve Cookie", empty_oven_path, class: 'button tiny'
+    - else
+      .cookie_ready{ :style => "display: none;" }
+        (Your #{pluralize(@oven.cookie.quantity, 'cookie')} #{@oven.cookie.quantity == 1 ? 'is' : 'are'} Ready)
+        = button_to "Retrieve Cookie", empty_oven_path, class: 'button tiny'
+      .cookie_cooking
+        (Your #{pluralize(@oven.cookie.quantity, 'cookie')} #{@oven.cookie.quantity == 1 ? 'is' : 'are'} still cooking)
+
   - else
     None
 
 %br
 
 = link_to "Prepare Cookie", new_oven_cookies_path(@oven), class: 'button'
+- if @oven.cookie 
+  :javascript
+    $(function() {
+      var cookingInterval = setInterval(function() {
+        $.getJSON("#{get_cookie_status_path(@oven.cookie.id)}", function(data) {
+          if (data.status == true) {
+            $(".cookie_ready").show();
+            $(".cookie_cooking").hide();
+            clearInterval(cookingInterval);
+          }
+        });
+      }, 1000);
+    });

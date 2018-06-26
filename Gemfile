@@ -19,6 +19,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg'
 gem 'devise'
+gem 'sidekiq'
 gem 'webpacker', '~> 3.0'
 
 group :development do
