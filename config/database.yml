@@ -14,13 +14,18 @@ development:
   host:     localhost
   database: tanooki-bakery_development
   pool: <%= web_pool_size %>
+  username: postgres
+  password: abcd1234
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *defaults
+  host:     localhost
   database: tanooki-bakery_test
+  username: postgres
+  password: abcd1234
   pool:     5
 
 production:

@@ -1,11 +1,11 @@
 %h3= @oven.name
 
 .cookie-info
-  Cookie in oven:
+  Cookies in oven:
   - if @oven.cookie
-    1 cookie with #{@oven.cookie.fillings || "no fillings"}
+    #{pluralize(@oven.cookie.quantity, "cookie")} with #{@oven.cookie.fillings || "no fillings"}
     - if @oven.cookie.ready?
-      (Your Cookie is Ready)
+      (Your #{pluralize(@oven.cookie.quantity, 'cookie')} #{@oven.cookie.quantity == 1 ? 'is' : 'are'} Ready)
       = button_to "Retrieve Cookie", empty_oven_path, class: 'button tiny'
   - else
     None
